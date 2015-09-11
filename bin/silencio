@@ -24,7 +24,7 @@ argv.option({
 var args = argv.run(),
     mute = args.options.mute && !args.options.unmute;
 
-if (args.length !== 1) {
+if (Object.keys(args.options).length !== 1) {
   console.error('Not enough arguments. Try silencio --help')
   process.exit(2);
 }

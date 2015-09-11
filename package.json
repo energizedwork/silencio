@@ -4,7 +4,8 @@
   "description": "Enables and disables OpsGenie policies",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "postinstall": "cp "
   },
   "keywords": [
     "muting",
