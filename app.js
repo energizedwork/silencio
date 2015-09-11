@@ -1,7 +1,12 @@
 var request = require('request'),
-    config = require('config');
+    Hoek = require('hoek');
 
-    config.opsgenie.api.key = process.env.OPSGENIE_API_KEY || config.opsgenie.api.key;
+var apiKey = process.env.OPSGENIE_API_KEY,
+    apiUrl = process.env.OPSGENIE_API_URL || 'https://api.opsgenie.com',
+    policy = process.env.OPSGENIE_POLICY;
+
+    Hoek.assert(apiKey, 'Opsgenie api key (env OPSGENIE_API_KEY) is required');
+    Hoek.assert(policy, 'Opsgenie policy name (env OPSGENIE_POLICY) is required');
 
 module.exports = {
 
@@ -12,17 +17,12 @@ module.exports = {
 
     var req = {
       method: "POST",
-      url: 'https://api.opsgenie.com/v1/json/alert/policy/' + operation,
+      url: apiUrl + '/v1/json/alert/policy/' + operation,
       body: {
-        apiKey: config.opsgenie.api.key,
-        name: config.opsgenie.api.policy
+        apiKey: apiKey,
+        name: policy
       },
       json: true
-    }
-
-    if (!config.enabled) {
-      console.warn('Silencio is disabled for environment', process.env.NODE_ENV);
-      process.exit(0);
     }
 
     request(req, function(error, response, resp) {

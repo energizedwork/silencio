@@ -1,10 +1,10 @@
 {
   "name": "silencio",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Enables and disables OpsGenie policies",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "keywords": [
     "muting",
@@ -17,10 +17,15 @@
   "license": "MIT",
   "dependencies": {
     "argv": "0.0.2",
-    "config": "^1.16.0",
+    "hoek": "^2.14.0",
     "request": "^2.61.0"
   },
   "bin": {
     "silencio": "./bin/silencio"
+  },
+  "devDependencies": {
+    "code": "^1.5.0",
+    "nock": "^2.10.0",
+    "mocha": "^2.3.2"
   }
 }
