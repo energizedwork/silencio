@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "opsgenie": {
+    "api": {
+      "url": "https://api.opsgenie.com",
+      "key": "__see_readme_md",
+      "policy": "deploy_quietly"
+    }
+  }
+}

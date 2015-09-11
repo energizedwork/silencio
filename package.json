@@ -1,0 +1,26 @@
+{
+  "name": "silencio",
+  "version": "1.0.0",
+  "description": "Enables and disables OpsGenie policies",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "muting",
+    "alerting",
+    "unmute",
+    "mute",
+    "opsgenie"
+  ],
+  "author": "Antony Jones",
+  "license": "MIT",
+  "dependencies": {
+    "argv": "0.0.2",
+    "config": "^1.16.0",
+    "request": "^2.61.0"
+  },
+  "bin": {
+    "silencio": "./bin/silencio"
+  }
+}

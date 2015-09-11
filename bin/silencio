@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var silencio = require('../app'),
+    argv = require('argv');
+
+argv.option({
+    name: 'mute',
+    short: 'm',
+    type: 'string',
+    description: 'Mute Alerting',
+    example: "'alerting --mute'"
+});
+
+argv.option({
+    name: 'unmute',
+    short: 'u',
+    type: 'string',
+    description: 'Unmute alerting',
+    example: "'alerting --unmute'"
+});
+
+var args = argv.run(),
+    mute = args.options.mute && !args.options.unmute;
+
+if (args.length !== 1) {
+  console.error('Not enough arguments. Try silencio --help')
+  process.exit(2);
+}
+
+silencio.trigger(mute);
