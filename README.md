@@ -2,6 +2,8 @@ Silencio
 ========
 Enables and disables selected OpsGenie policies.
 
+[![Build Status](https://travis-ci.org/energizedwork/silencio.svg?branch=master)](https://travis-ci.org/energizedwork/silencio)
+
 Installing
 ==========
 ```
