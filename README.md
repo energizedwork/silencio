@@ -15,8 +15,9 @@ Usage
 Simply run ```silencio``` for usage.
 
 ```
+silencio --help
 silencio --mute
-silencio --mute
+silencio --unmute
 ```
 
 Configuration
