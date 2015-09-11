@@ -1,11 +1,9 @@
 Silencio
 ========
-
 Enables and disables selected OpsGenie policies.
 
 Installing
 ==========
-
 ```
 npm install -g silencio
 ```
@@ -22,8 +20,10 @@ silencio --unmute
 
 Configuration
 =============
-```NODE_ENV``` is used to read config variables, as ./config/<NODE_ENV>.json
+Configuration is set via environment variables.
 
-```defaults.json``` is used by default.
-
-```OPSGENIE_API_KEY``` environment variable can be set to override configured OPSGENIE API KEY
+Variable              | Required?  | Description
+--------------------- | ---------- | ------------------------------------------
+_OPSGENIE_API_KEY_    | yes        | OpsGenie API key
+_OPSGENIE_POLICY_     | yes        | OpsGenie Alerting Policy to enable/disable
+_OPSGENIE_API_URL_    | no         | OpsGenie API URL override
